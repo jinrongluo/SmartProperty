@@ -13,3 +13,12 @@ eureka:
     leaseRenewalIntervalInSeconds: 10
     metadataMap:
       instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${server.port}}}
+propertylayout:
+  ribbon:
+    NIWSServerListClassName: org.apache.servicecomb.springboot.starter.discovery.ServiceCombServerList
+propertyinfo:
+  ribbon:
+    NIWSServerListClassName: org.apache.servicecomb.springboot.starter.discovery.ServiceCombServerList
+cse:
+  credentials:
+    project: cn-north-1
