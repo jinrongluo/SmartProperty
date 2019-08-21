@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="header :: head">
+</head>
+<body>
+  
+   <div th:replace="header :: header"></div>
+	 
+	 <main role="main" class="main">
+	   
+		<div class="container text-center">
+		  <div class="row">
+			<div class="col"></div>
+		    <div class="col login-title">
+		      <h1>Welcome Home</h1>
+		    </div>
+			<div class="col"></div>
+  		</div>
+  		
+  		<form role="form" class="form" action="/signin" method="post" id="login-form">
+  		    <div class="row">
+				<div class="col"></div>
+			    <div class="col form-group">
+			    	  <input type="text" class="form-control" id="userName" name="userName" placeholder="User Name"/>
+			    </div>
+				<div class="col"></div>
+	  		</div>
+	  		  <div class="row">
+				<div class="col"></div>
+			    <div class="col form-group">
+			        <input type="password" class="form-control" id="password" name="password" placeholder="Password"/>
+			    </div>
+				<div class="col"></div>
+	  		</div>
+	  		<div class="row">
+				<div class="col"></div>
+			    <div class="col form-group">
+			       <button class="btn btn-lg btn-success btn-block" type="submit">Sign in</button>
+			    </div>
+				<div class="col"></div>
+	  		</div>
+	  		
+	  		<div class="row" th:if="${param.error}">
+				<div class="col"></div>
+			    <div class="col">
+			        <div th:text="${param.error}" class="alert alert-danger" role="alert"></div>
+			    </div>
+				<div class="col"></div>
+	  		</div>
+	  		
+  		</form>
+  		
+	  </div>
+	</main>
+	 
+</body>
+</html>

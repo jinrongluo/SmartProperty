@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="header :: head">
+</head>
+<body>
+  
+   <div th:replace="header :: header"></div>
+	 
+	 <main role="main" class="main">
+		<div class="container text-center">
+		  <div class="row">
+			<div class="col"></div>
+		    <div class="col">
+		      <h2>Welcome Home</h2>
+		    </div>
+			<div class="col"></div>
+  		</div>
+  		 
+  		  <!-- Property Information -->
+  		  <div class="row prop-info text-left" th:if=${propInfo}>
+			  	<div class="col">
+					<h5><span class="badge badge-secondary">TYPE : </span> <span th:text="${propInfo.get('buildingType')}"></span></h5>
+				</div>
+				<div class="col">
+					<h5><span class="badge badge-secondary">YEAR : </span> <span th:text="${propInfo.get('year')}"></span></h5>
+				</div>
+				<div class="col">
+					<h5><span class="badge badge-secondary">AREA : </span> <span th:text="${propInfo.get('area')} + ' sq ft'"></span></h5>
+				</div>
+			</div>
+			<div class="row text-left" th:if=${propInfo}>
+				<div class="col">
+					<h5><span class="badge badge-secondary">MGT FEE : </span> <span th:text="'$' + ${propInfo.get('mgtFee') + ' /month'}"></span></h5>
+				</div>
+				<div class="col-8">
+					<h5><span class="badge badge-secondary">FEATURES : </span> <span th:text="${propInfo.get('features')}"></span></h5>
+				</div>
+	 	   </div>
+	  
+	  </div>
+	  
+	
+	  <!-- Property Layout -->
+	   <div class="prop-layout">	  
+		  <div class="row">
+		  	  <th:block th:each="room: ${propLayout.get('rooms')}">
+				  	<div class="card room-card" th:if="${room.get('roomType')} == 'LivingRoom'">
+				  		<div class="card-header"></div>
+				  		<div class="card-body">
+				  			<h5 class="card-title" th:text="${room.get('roomName')}"></h5>
+							<p class="card-text" th:text="${room.get('roomLocation')}"></p>
+				  		</div>
+				  		
+				  		<ul class="list-group list-group-flush" th:each="accessory: ${room.get('accessories')}">
+						    <li class="list-group-item" th:text="${accessory.get('accessoryName')}"></li>
+					  	</ul>
+				  	</div>
+			   		  	  
+		   	 </th:block>
+		  </div>
+		
+		 <hr/>
+		
+		  <div class="row">
+		  	  <th:block th:each="room: ${propLayout.get('rooms')}">
+				  	<div class="card room-card" th:if="${room.get('roomType')} == 'Kitchin'">
+				  		<div class="card-header"></div>
+				  		<div class="card-body">
+				  			<h5 class="card-title" th:text="${room.get('roomName')}"></h5>
+							<p class="card-text" th:text="${room.get('roomLocation')}"></p>
+				  		</div>
+				  		
+				  		<ul class="list-group list-group-flush" th:each="accessory: ${room.get('accessories')}">
+						    <li class="list-group-item" th:text="${accessory.get('accessoryName')}"></li>
+					  	</ul>
+				  	</div>
+			   		  	  
+		   	 </th:block>
+		  </div>
+		  
+		  <hr/>
+		  
+		  <div class="row">
+		  	  <th:block th:each="room: ${propLayout.get('rooms')}">
+				  	<div class="card room-card" th:if="${room.get('roomType')} == 'Bedroom'">
+				  		<div class="card-header"></div>
+				  		<div class="card-body">
+				  			<h5 class="card-title" th:text="${room.get('roomName')}"></h5>
+							<p class="card-text" th:text="${room.get('roomLocation')}"></p>
+				  		</div>
+				  		
+				  		<ul class="list-group list-group-flush" th:each="accessory: ${room.get('accessories')}">
+						    <li class="list-group-item" th:text="${accessory.get('accessoryName')}"></li>
+					  	</ul>
+				  	</div>
+			   		  	  
+		   	 </th:block>
+		  </div>	
+		  
+		  <hr/>
+		  
+		   <div class="row">
+		  	  <th:block th:each="room: ${propLayout.get('rooms')}">
+				  	<div class="card room-card" th:if="${room.get('roomType')} == 'Washingroom'">
+				  		<div class="card-header"></div>
+				  		<div class="card-body">
+				  			<h5 class="card-title" th:text="${room.get('roomName')}"></h5>
+							<p class="card-text" th:text="${room.get('roomLocation')}"></p>
+				  		</div>
+				  		
+				  		<ul class="list-group list-group-flush" th:each="accessory: ${room.get('accessories')}">
+						    <li class="list-group-item" th:text="${accessory.get('accessoryName')}"></li>
+					  	</ul>
+				  	</div>
+			   		  	  
+		   	 </th:block>
+		  </div>  
+	  </div>	  	  
+   </main>
+	 
+</body>
+</html>

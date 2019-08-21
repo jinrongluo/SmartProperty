@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>Smart Property</title>
+    <link href="libs/bootstrap-4.2.1/bootstrap.min.css" rel="stylesheet">
+
+    <script src="libs/jquery-3.3.1/jquery.min.js"></script>
+    <script src="libs/bootstrap-4.2.1/bootstrap.bundle.min.js"></script>
+    
+     <link href="css/app.css" rel="stylesheet">
+</head>
+<body>
+	<div th:fragment="header">
+	    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+	   	 	<img src="imgs/real-estate-icon.png" width="50" height="50"/>
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+			    <span class="navbar-toggler-icon"></span>
+			  </button>
+	
+			  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+			      
+				    <ul class="navbar-nav mr-auto">
+				      <li class="nav-item active">
+				        <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+				      </li>
+				    </ul>
+	
+					
+				   <ul class="navbar-nav" th:if=${session.auth}>
+				      <li class="nav-item active">
+				        <a class="nav-link" href="#" th:text="'Welcome, ' + ${session.userName}"></a>
+				      </li>
+	     		  </ul>
+		          <form role="form" action="/signout" method="post" id="logout-form"  th:if=${session.auth}>
+				      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="">Sign out</button>
+				  </form>
+					
+			   </div>
+		 </nav>
+	 </div>
+</body>
+</html>

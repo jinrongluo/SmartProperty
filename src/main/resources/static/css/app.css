@@ -1,0 +1,25 @@
+
+.main {
+	padding:50px;
+}
+
+.login-title {
+	margin-top:150px;
+	margin-bottom:50px;
+}
+
+.prop-info {
+	margin-top:50px;
+}
+
+.prop-layout {
+	margin-left: 200px;	
+}
+
+.room-card {
+	width: 20rem;
+	margin-top: 30px;
+	margin-buttom: 30px;
+	margin-left: 50px;
+	margin-right: 50px;
+}
